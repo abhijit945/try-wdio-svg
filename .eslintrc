@@ -1,0 +1,16 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "globals": {
+        "ENV": true
+    },
+    "extends": ["eslint:recommended"],
+    "plugins": ["ideal"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    }
+}
