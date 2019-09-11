@@ -7,8 +7,8 @@
     "globals": {
         "ENV": true
     },
-    "extends": ["eslint:recommended"],
-    "plugins": ["ideal"],
+    "extends": ["eslint:recommended", "plugin:wdio/recommended"],
+    "plugins": ["ideal", "wdio"],
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module"
