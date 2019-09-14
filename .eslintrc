@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "globals": {
         "ENV": true
@@ -10,7 +11,7 @@
     "extends": ["eslint:recommended", "plugin:wdio/recommended"],
     "plugins": ["ideal", "wdio"],
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 8,
         "sourceType": "module"
     }
 }
