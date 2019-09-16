@@ -1,5 +1,7 @@
 # try-wdio-svg
 
+[![Build Status](https://travis-ci.com/abhijit945/try-wdio-svg.svg?branch=master)](https://travis-ci.com/abhijit945/try-wdio-svg)
+
 Test repo for WDIO with D3 SVG graphs
 
 ## Dependencies
@@ -49,6 +51,10 @@ Test repo for WDIO with D3 SVG graphs
 
 ## Pending
 
+-   [x] Add WDio 5
+-   [x] Add Webpack as a custom service using `static-server` service
+-   [x] Add `image-comparison` service
+-   [x] Test if comparison works
 -   [ ] TravisCI
 -   [ ] Axe a11y
 -   [ ] Docker integration - Integration testing
