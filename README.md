@@ -37,8 +37,19 @@ Test repo for WDIO with D3 SVG graphs
 
 ### Actual
 
+`Value of the first data-point is 98`
+
 ![Actual](./assets/screenshots/actual/desktop_chrome/.carbon-graph-container--1280x800.png "Actual")
 
 ### Diff
 
+`Value of the first data-point is changed to 98.5`
+
 ![Diff](./assets/screenshots/diff/desktop_chrome/.carbon-graph-container--1280x800.png "Diff")
+
+## Pending
+
+-   [ ] TravisCI
+-   [ ] Axe a11y
+-   [ ] Docker integration - Integration testing
+-   [ ] Docker integration - Unit testing
