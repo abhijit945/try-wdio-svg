@@ -1,11 +1,12 @@
 const { join } = require("path");
+const { TimelineService } = require("wdio-timeline-reporter/timeline-service");
 const middleware = require("webpack-dev-middleware");
 const compiler = require("webpack")(require("./webpack.config.js"));
 const wdioLogger = require("@wdio/logger").default;
 const logger = wdioLogger("wdio-test");
 
 exports.config = {
-    specs: ["./src/test/integration/**/*.js"],
+    specs: ["./src/test/integration/**/*test.js"],
     exclude: [],
     maxInstances: 10,
     capabilities: [
@@ -50,6 +51,7 @@ exports.config = {
                 blockOutToolBar: true
             }
         ],
+        [TimelineService],
         ["selenium-standalone"]
     ],
     staticServerPort: 9991,
@@ -75,7 +77,11 @@ exports.config = {
         }
     },
     framework: "jasmine",
-    reporters: ["dot", "spec"],
+    reporters: [
+        "dot",
+        "spec",
+        ["timeline", { outputDir: "./.coverage/timeline" }]
+    ],
     jasmineNodeOpts: {
         defaultTimeoutInterval: 10000
     },
@@ -89,6 +95,16 @@ exports.config = {
         logger.info(capabilities);
     },
     /**
+     * Gets executed just before initialising the webdriver session and test framework. It allows you
+     * to manipulate configurations depending on the capability or spec.
+     * @param {Object} config wdio configuration object
+     * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {Array.<String>} specs List of spec file paths that are to be run
+     */
+    beforeSession: function(config, capabilities, specs) {
+        require("@babel/register");
+    },
+    /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
@@ -96,7 +112,6 @@ exports.config = {
      */
     before: function(capabilities, specs) {
         logger.info(specs);
-        require("@babel/register");
     },
     /**
      * Gets executed after all workers got shut down and the process is about to exit.

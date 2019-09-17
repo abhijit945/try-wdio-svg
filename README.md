@@ -55,7 +55,7 @@ Test repo for WDIO with D3 SVG graphs
 -   [x] Add Webpack as a custom service using `static-server` service
 -   [x] Add `image-comparison` service
 -   [x] Test if comparison works
--   [ ] TravisCI
--   [ ] Axe a11y
 -   [ ] Docker integration - Integration testing
+-   [ ] Axe a11y
+-   [ ] TravisCI
 -   [ ] Docker integration - Unit testing
