@@ -21,6 +21,7 @@ Test repo for WDIO with D3 SVG graphs
 "@wdio/local-runner": "^5.13.0",
 "@wdio/selenium-standalone-service": "^5.12.1",
 "@wdio/spec-reporter": "^5.12.1",
+"wdio-timeline-reporter": "^5.0.12",
 "@wdio/static-server-service": "^5.12.1",
 "@wdio/sync": "^5.13.0",
 "axe-core": "^3.3.2",
@@ -55,7 +56,7 @@ Test repo for WDIO with D3 SVG graphs
 -   [x] Add Webpack as a custom service using `static-server` service
 -   [x] Add `image-comparison` service
 -   [x] Test if comparison works
+-   [x] Axe a11y
 -   [ ] Docker integration - Integration testing
--   [ ] Axe a11y
 -   [ ] TravisCI
 -   [ ] Docker integration - Unit testing
