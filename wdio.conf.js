@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const { join } = require("path");
 const { TimelineService } = require("wdio-timeline-reporter/timeline-service");
 const middleware = require("webpack-dev-middleware");
@@ -68,14 +69,6 @@ exports.config = {
             })
         }
     ],
-    dockerOptions: {
-        image: "selenium/standalone-chrome",
-        healthCheck: "http://localhost:9991",
-        options: {
-            p: ["9991:9991"],
-            shmSize: "2g"
-        }
-    },
     framework: "jasmine",
     reporters: [
         "dot",

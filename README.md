@@ -57,6 +57,8 @@ Test repo for WDIO with D3 SVG graphs
 -   [x] Add `image-comparison` service
 -   [x] Test if comparison works
 -   [x] Axe a11y
+-   [x] TravisCI
+-   [x] Timeline Service **Optional**
 -   [ ] Docker integration - Integration testing
--   [ ] TravisCI
+-   [ ] TravisCI with Docker
 -   [ ] Docker integration - Unit testing

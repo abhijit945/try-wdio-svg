@@ -1,6 +1,6 @@
 import * as axe from "axe-core";
 const wdioLogger = require("@wdio/logger").default;
-const logger = wdioLogger("AXE-CORE");
+const logger = wdioLogger("axe-core");
 
 const a11ySpecsList = ["wcag2a", "wcag2aa", "wcag21aa", "section508"];
 
