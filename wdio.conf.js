@@ -7,6 +7,8 @@ const wdioLogger = require("@wdio/logger").default;
 const logger = wdioLogger("wdio-test");
 
 exports.config = {
+    host: "selenium",
+    port: 4444,
     specs: ["./src/test/integration/**/*test.js"],
     exclude: [],
     maxInstances: 10,
@@ -52,8 +54,7 @@ exports.config = {
                 blockOutToolBar: true
             }
         ],
-        [TimelineService],
-        ["selenium-standalone"]
+        [TimelineService]
     ],
     staticServerPort: 9991,
     staticServerFolders: [

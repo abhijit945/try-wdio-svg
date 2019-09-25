@@ -1,26 +1,17 @@
-FROM node:10.7-alpine
+FROM node:11
 LABEL maintainer="Abhijit Rao <abhijit945@gmail.com>"
 
-ENV LANG C.UTF-8
-ENV APP_HOME /app
-RUN { \
-    echo '#!/bin/sh'; \
-    echo 'set -e'; \
-    echo; \
-    echo 'dirname "$(dirname "$(readlink -f "$(which javac || which java)")")"'; \
-    } > /usr/local/bin/docker-java-home \
-    && chmod +x /usr/local/bin/docker-java-home
-ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
-ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
-ENV JAVA_VERSION 8u171
-ENV JAVA_ALPINE_VERSION 8.212.04-r1
+# Set working directory
+WORKDIR /app
+COPY . /app
 
-RUN echo '#!/bin/sh'; \
-    set -x \
-    && apk add --no-cache \
-    openjdk8-jre="$JAVA_ALPINE_VERSION" \
-    && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+# Install Java 8
+RUN apt-get update \
+    && apt-get install -y libaio1 \
+    && apt-get install -y build-essential \
+    && apt-get install -y unzip \
+    && apt-get install -y curl \
+    && apt-get install -y openjdk-8-jdk \
+    && apt-get install -y vim
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+RUN export JAVA_HOME

@@ -1,9 +1,21 @@
-version: "3"
+version: "3.7"
+
 services:
     wdio:
+        network_mode: host
+        image: wdio-selenium-image
         build:
-          context: .
-          dockerfile: Dockerfile
-        command: npm test
-        volumes: 
-          - .:/app
+            dockerfile: ./Dockerfile
+            context: .
+        volumes:
+            - .:/app
+        depends_on:
+            - "selenium"
+        command: /bin/bash -c "cd app; npm test"
+    selenium:
+        network_mode: host
+        image: selenium/standalone-chrome
+        volumes:
+            - /dev/shm:/dev/shm
+        ports:
+            - "4444:4444"
