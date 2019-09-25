@@ -1,0 +1,9 @@
+version: "3"
+services:
+    wdio:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        command: npm test
+        volumes: 
+          - .:/app
