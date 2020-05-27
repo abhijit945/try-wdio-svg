@@ -7,7 +7,7 @@
     "url": "https://github.com/abhijit945/try-wdio-svg/issues"
   },
   "dependencies": {
-    "@cerner/carbon-graphs": "^1.9.1"
+    "@cerner/carbon-graphs": "^1.22.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
